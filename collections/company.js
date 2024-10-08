@@ -3,7 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const company = new Schema({
-  item: String,
+  companyId: String,
+  companyName: String,
+  taxId: String,
+  charterCapital: Number,
+  fieldOfActivity: String,
+  numberOfEmployees: Number,
+  officeAddress: String,
+  officeArea: Number,
+  phone: String
 }, {
   collection: 'companies'
 });

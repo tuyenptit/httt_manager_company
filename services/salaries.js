@@ -1,7 +1,7 @@
-const CompanyModel = require("../collections/company")
+const salariesModel = require("../collections/salaries")
 
-async function getListCompaniesServices(req, res) {
-    CompanyModel.find({})
+async function getListsalariesServices(req, res) {
+    salariesModel.find({})
         .then(data => {
             res.status(200).json(data);
         })
@@ -11,8 +11,8 @@ async function getListCompaniesServices(req, res) {
 
 }
 
-async function createCompanyServices(req, res) {
-    CompanyModel.create({
+async function createsalariesServices(req, res) {
+    salariesModel.create({
         ...req.body
     })
         .then(data => {
@@ -24,6 +24,6 @@ async function createCompanyServices(req, res) {
 }
 
 module.exports = {
-    getListCompaniesServices,
-    createCompanyServices,
+    getListsalariesServices,
+    createsalariesServices,
 }
