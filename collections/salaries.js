@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const salaries = new Schema({
   employeeId: String,
   serviceId: String,
+  salaryBase: Number,
   salaryRate: Number, 
   calculatedSalary:	Number
   

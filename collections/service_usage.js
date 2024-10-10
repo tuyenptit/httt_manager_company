@@ -5,12 +5,10 @@ const Schema = mongoose.Schema;
 const service_usage = new Schema({
   companyId: String,
   serviceId: String,
-  registrationDate: Date,
-  priceMultiplier: Number,
-  serviceFee: Number,
   isMandatory: String,
-  daysUsed: Number,
-  monthlyFee: Number
+  registrationDate: Date,
+  daysUsed: Number, 
+  serviceFee: Number
   
   
 }, {

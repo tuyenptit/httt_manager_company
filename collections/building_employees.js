@@ -9,7 +9,8 @@ const services = new Schema({
   birthDate: Date,
   address: String,
   phone: Number,
-  position: String
+  position: String,
+  
   
 }, {
   collection: 'building_employees'
