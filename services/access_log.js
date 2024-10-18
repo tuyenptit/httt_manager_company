@@ -11,6 +11,20 @@ async function getListaccess_logServices(req, res) {
 
 }
 
+async function getLogServices(req, res) {
+    const employeeId = req.params.id;
+    access_logModel.find({
+        employeeId: employeeId
+    })
+        .then(data => {
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.log("ERROR: ", err);
+        })
+
+}
+
 async function createaccess_logServices(req, res) {
     access_logModel.create({
         ...req.body
@@ -26,4 +40,5 @@ async function createaccess_logServices(req, res) {
 module.exports = {
     getListaccess_logServices,
     createaccess_logServices,
+    getLogServices
 }

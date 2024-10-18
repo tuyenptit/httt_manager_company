@@ -7,10 +7,7 @@ const service_usage = new Schema({
   serviceId: String,
   isMandatory: String,
   registrationDate: Date,
-  daysUsed: Number, 
-  serviceFee: Number
-  
-  
+  serviceFee: Number,
 }, {
   collection: 'service_usage'
 });

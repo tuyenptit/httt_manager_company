@@ -8,7 +8,6 @@ const salaries = new Schema({
   salaryBase: Number,
   salaryRate: Number, 
   calculatedSalary:	Number
-  
 }, {
   collection: 'salaries'
 });
