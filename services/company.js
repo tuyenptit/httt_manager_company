@@ -45,11 +45,11 @@ async function getServicesCompanyServices(req, res) {
 
     const arrPrice =  await Promise.all(listQuery)
 
-    const sumPrice = arrPrice.reduce((c, s, index) => {
+    let sumPrice = 2500000
+    sumPrice = arrPrice.reduce((c, s, index) => {
         const now = new Date()
         const dateRes = new Date(listServices[index].registrationDate)
         const diff = Math.abs(now - dateRes);
-
 
         return c + ((s.basePrice / 30) * (diff / 86400000))
     }, 0)
@@ -57,7 +57,7 @@ async function getServicesCompanyServices(req, res) {
     let priceOfficeSrise = 0
     let priceEmployeeSrise = 0
     if(company.officeArea > 100) {
-        priceOfficeSrise = (sumPrice * (parseInt((company.officeArea - 100) / 10)) * 0.05)
+        priceOfficeSrise = (2500000 * (parseInt((company.officeArea - 100) / 10)) * 0.05)
     }
     if(company.numberOfEmployees > 10) {
         priceEmployeeSrise = (sumPrice * (parseInt((company.numberOfEmployees - 10) / 5)) * 0.05)
