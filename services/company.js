@@ -45,8 +45,6 @@ async function getServicesCompanyServices(req, res) {
 
     const arrPrice =  await Promise.all(listQuery)
 
-    console.log("arrPrice", listServices)
-
     const sumPrice = arrPrice.reduce((c, s, index) => {
         const now = new Date()
         const dateRes = new Date(listServices[index].registrationDate)

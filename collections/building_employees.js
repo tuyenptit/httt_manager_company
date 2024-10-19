@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const building_employeesRouter = require('../routers/building_employees');
 
 const Schema = mongoose.Schema;
 
@@ -10,12 +9,12 @@ const services = new Schema({
   address: String,
   phone: Number,
   position: String,
-  
-  
+  salaryBase: Number,
+  serviceId: String,
 }, {
   collection: 'building_employees'
 });
 
-const building_employeesModel = mongoose.model('building_employees',building_employeesRouter);
+const building_employeesModel = mongoose.model('building_employees', services);
 
 module.exports = building_employeesModel;
